@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form>
+        <div class="ComputerType">
+            <select id="brend">
+                <option value="MacBook">MacBook</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Hp">Hp</option>
+            </select>
+            <select id="color">
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Whitesmoke">Whitesmoke</option>
+            </select>
+            <input type="number" placeholder="Prize">
+            <input type="number" placeholder="Memory">
+            </div>
+        <span>x</span>
+    </form>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #eee;
+        }
+
+        form{
+            width: 50%;
+            height: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5), -10px 10px 10px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        form select, input{
+            width: 90%;
+            padding: 10px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid #eee;
+            border-bottom-left-radius: 7px;
+            color: white;
+            margin: 15px 0;
+            transition: 500ms;
+        }
+
+        form select:hover, input:hover{
+            border-bottom-left-radius: 10px;
+            box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        form select option{
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        form select:focus, input:focus{
+            background-color: black;
+        }
+
+        form span{
+            position: absolute;
+            top: 0.3em;
+            right: 1em;
+            color: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        form span:hover{
+            color: red;
+        }        
+    </style>
+    <script>
+        let clsBtn = document.querySelector("span")
+        let form = document.querySelector("form")
+        let opt = document.querySelector("option")
+        let inp = document.querySelector("input")
+        clsBtn.addEventListener('click', function(){
+            let con = confirm("Ma'lumotlar o`chib ketishi mumkin, davom etasizmi?")
+            if(con === true){
+                form.style.display = "none"
+            }
+        })
+    </script>
+</body>
+</html>
